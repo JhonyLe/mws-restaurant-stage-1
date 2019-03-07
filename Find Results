@@ -1,0 +1,24 @@
+Searching 9 files for "<your MAPBOX API KEY HERE>"
+
+/Users/ashalamova/dev/mws-restaurant-stage-1/README.md:
+   27  ## Leaflet.js and Mapbox:
+   28  
+   29: This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information.
+   30  
+   31  ### Note about ES6
+
+/Users/ashalamova/dev/mws-restaurant-stage-1/js/main.js:
+   79        });
+   80    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
+   81:     mapboxToken: 'pk.eyJ1IjoiamhvbnlsZSIsImEiOiJjanN5ZG1wencwZWJ5M3lyMmQ5NTQ2M3U0In0.UVXq7SGaCmuD87XLRPdL8A',
+   82      maxZoom: 18,
+   83      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+
+/Users/ashalamova/dev/mws-restaurant-stage-1/js/restaurant_info.js:
+   23        });
+   24        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
+   25:         mapboxToken: 'pk.eyJ1IjoiamhvbnlsZSIsImEiOiJjanN5ZG1wencwZWJ5M3lyMmQ5NTQ2M3U0In0.UVXq7SGaCmuD87XLRPdL8A',
+   26          maxZoom: 18,
+   27          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+
+3 matches across 3 files
