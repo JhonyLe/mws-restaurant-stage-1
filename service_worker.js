@@ -1,4 +1,4 @@
-const cacheVersion = 'v5';
+const cacheVersion = 'v6';
 
 this.addEventListener('install', function(event) {
     event.waitUntil(
@@ -21,9 +21,13 @@ this.addEventListener('install', function(event) {
 this.addEventListener('fetch', function(event) {
     console.log(event.request)
     event.respondWith(
-        caches.match(event.request).then(function(response) {
-            if (response) return response;
-            return fetch(event.request);
+        caches.match(event.request).then(function(resp) {
+            return resp || fetch(event.request).then(function(response) {
+                return caches.open(cacheVersion).then(function(cache) {
+                    cache.put(event.request, response.clone());
+                    return response;
+                });
+            });
         })
     );
 });
