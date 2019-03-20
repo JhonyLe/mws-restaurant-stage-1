@@ -1,9 +1,8 @@
-const cacheVersion = 'v6';
+const cacheVersion = 'v1';
 
 this.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open(cacheVersion).then(function(cache) {
-            console.log(cacheVersion)
             return cache.addAll([
                 '/',
                 '/index.html',
@@ -19,7 +18,6 @@ this.addEventListener('install', function(event) {
 });
 
 this.addEventListener('fetch', function(event) {
-    console.log(event.request)
     event.respondWith(
         caches.match(event.request).then(function(resp) {
             return resp || fetch(event.request).then(function(response) {
